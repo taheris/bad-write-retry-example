@@ -1,0 +1,21 @@
+[package]
+name = "bad-write-retry-example"
+version = "0.1.0"
+authors = ["Shaun Taheri <shaun@taheris.co.uk>"]
+
+[lib]
+name = "testopenssl"
+path = "src/lib.rs"
+
+[[bin]]
+name = "testopenssl"
+path = "src/main.rs"
+doc = false
+
+[dependencies]
+hyper = { git = "https://github.com/hyperium/hyper" }
+rustc-serialize = "0.3.19"
+url = "1.1.1"
+
+[replace]
+#"openssl:0.7.14" = {git = "ssh://git@github.com/taheris/rust-openssl.git", branch = "fix/moving-write-buffer"}
